@@ -53,8 +53,32 @@ input,button{font:inherit}
 .brand>span:last-child{display:flex;flex-direction:column;line-height:1}
 .brand strong{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:18px;letter-spacing:.06em;font-weight:800}
 .brand small{margin-top:7px;color:var(--muted);font-size:10px;letter-spacing:.08em}
-.site-header nav{display:flex;justify-content:center;gap:30px;color:#555f70;font-size:12px}
-.site-header nav a:hover{color:var(--red)}
+.site-header nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px
+}
+.site-header nav a{
+  padding:9px 14px;
+  border:1px solid transparent;
+  border-radius:999px;
+  background:rgba(255,255,255,.46);
+  color:#273142;
+  font-family:"Barlow Condensed","Arial Narrow",sans-serif;
+  font-size:16px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.035em;
+  backdrop-filter:blur(7px);
+  transition:background .18s,color .18s,border-color .18s,transform .18s
+}
+.site-header nav a:hover{
+  color:#fff;
+  background:var(--red);
+  border-color:var(--red);
+  transform:translateY(-1px)
+}
 .header-cta{
   min-width:118px;padding:13px 16px;display:inline-flex;align-items:center;justify-content:space-between;
   gap:18px;background:var(--dark);color:#fff;border-radius:13px;font-size:12px;font-weight:800;
@@ -70,8 +94,9 @@ input,button{font:inherit}
     linear-gradient(90deg,rgba(248,248,248,.99) 0%,rgba(248,248,248,.96) 31%,rgba(248,248,248,.78) 48%,rgba(248,248,248,.28) 68%,rgba(20,21,24,.32) 100%),
     url("assets/logo-dj-barbearia.jpeg");
   background-repeat:no-repeat;
-  background-size:cover;
-  background-position:57% center;
+  background-size:cover, auto 92%;
+  background-position:center, 63% center;
+  background-color:#f4f5f7;
   border-bottom:1px solid var(--line)
 }
 .hero-panel{
@@ -274,10 +299,33 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
 
 @media(max-width:980px){
   .wrap{width:min(var(--max),calc(100% - 44px))}
-  .site-header{width:calc(100% - 44px);grid-template-columns:1fr auto}
-  .site-header nav{display:none}
-  .hero{min-height:700px;background-position:62% center}
-  .hero-panel{min-height:700px;padding-block:132px 70px}
+  .site-header{
+    width:calc(100% - 44px);
+    min-height:126px;
+    grid-template-columns:1fr auto;
+    grid-template-rows:72px 42px;
+    grid-template-areas:"brand cta" "nav nav";
+    row-gap:0
+  }
+  .site-header .brand{grid-area:brand}
+  .site-header .header-cta{grid-area:cta}
+  .site-header nav{
+    grid-area:nav;
+    justify-content:flex-start;
+    gap:6px;
+    padding-left:14px
+  }
+  .site-header nav a{
+    padding:8px 12px;
+    font-size:15px;
+    background:rgba(255,255,255,.58)
+  }
+  .hero{
+    min-height:720px;
+    background-size:cover, auto 82%;
+    background-position:center, 68% center
+  }
+  .hero-panel{min-height:720px;padding-block:158px 70px}
   .hero-copy{width:min(590px,66%)}
   .section-head{grid-template-columns:1fr}
   .works-grid,.contact-grid{grid-template-columns:1fr}
@@ -291,19 +339,45 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
 }
 @media(max-width:640px){
   .wrap{width:calc(100% - 30px)}
-  .site-header{width:calc(100% - 30px);min-height:78px;gap:14px}
-  .brand-mark{width:40px;height:40px}
-  .brand strong{font-size:11px}.brand small{font-size:9px}
-  .header-cta{min-width:auto;padding:11px 13px}.header-cta span{display:none}
-  .hero{
-    min-height:660px;
-    background-image:
-      linear-gradient(90deg,rgba(248,248,248,.99) 0%,rgba(248,248,248,.97) 57%,rgba(248,248,248,.72) 76%,rgba(20,21,24,.22) 100%),
-      url("assets/logo-dj-barbearia.jpeg");
-    background-position:68% center
+  .site-header{
+    width:calc(100% - 30px);
+    min-height:122px;
+    gap:10px;
+    grid-template-columns:1fr auto;
+    grid-template-rows:70px 42px;
+    grid-template-areas:"brand cta" "nav nav"
   }
-  .hero-panel{min-height:660px;padding-block:118px 54px}
-  .hero-copy{width:88%}
+  .brand{margin-left:0}
+  .brand-mark{width:40px;height:40px}
+  .brand strong{font-size:15px}
+  .brand small{font-size:9px}
+  .header-cta{min-width:auto;padding:11px 13px}.header-cta span{display:none}
+  .site-header nav{
+    justify-content:flex-start;
+    padding-left:0;
+    gap:5px;
+    overflow-x:auto;
+    scrollbar-width:none
+  }
+  .site-header nav::-webkit-scrollbar{display:none}
+  .site-header nav a{
+    flex:0 0 auto;
+    padding:8px 10px;
+    font-size:14px;
+    background:rgba(255,255,255,.66);
+    border-color:rgba(17,24,39,.08)
+  }
+  .hero{
+    min-height:700px;
+    background-image:
+      linear-gradient(90deg,rgba(248,248,248,.995) 0%,rgba(248,248,248,.97) 46%,rgba(248,248,248,.72) 66%,rgba(66,66,68,.42) 84%,rgba(20,21,24,.62) 100%),
+      url("assets/logo-dj-barbearia.jpeg");
+    background-size:cover, auto 68%;
+    background-position:center, 76% 47%;
+    background-color:#f4f5f7
+  }
+  .hero-panel{min-height:700px;padding-block:162px 54px}
+  .hero-copy{width:90%}
   h1{font-size:clamp(68px,21vw,104px)}
   h1 span{font-size:.5em}
   .hero-actions{display:grid;grid-template-columns:1fr}
