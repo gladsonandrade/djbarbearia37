@@ -1,0 +1,16 @@
+{
+  "name": "djbarbearia37",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Site e agenda da DJ Barbearia 37 — base inicial",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch src/server/main.js",
+    "start": "node --env-file-if-exists=.env src/server/main.js",
+    "db:migrate": "node --env-file-if-exists=.env scripts/migrate.js",
+    "db:backup": "node --env-file-if-exists=.env scripts/backup.js",
+    "test": "node --test",
+    "check": "node scripts/check.js"
+  }
+}

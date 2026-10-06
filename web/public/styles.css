@@ -1,0 +1,10 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #151a18; color: #f3eee3; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 2rem; }
+main { max-width: 46rem; border-top: 2px solid #cbb28c; padding-top: 2rem; }
+.eyebrow { letter-spacing: .18em; color: #cbb28c; font-size: .85rem; font-weight: 700; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1.06; letter-spacing: -.04em; }
+p { line-height: 1.7; }
+.services { display: flex; flex-wrap: wrap; gap: .7rem; margin: 2rem 0; }
+.services span { border: 1px solid #56605a; padding: .55rem .85rem; border-radius: 2rem; }
+.notice { color: #c6ccc7; }
