@@ -71,21 +71,8 @@ a:focus-visible,input:focus-visible,summary:focus-visible {
   font-weight:700;
   flex-shrink:0
 }
-.brand-mark {
-  font-family:Georgia,serif;
-  font-size:35px;
-  letter-spacing:-3px;
-  color:var(--gold);
-  border-right:1px solid var(--border);
-  padding-right:17px;
-  position:relative
-}
-.brand-mark>span {
-  font:10px Arial,sans-serif;
-  letter-spacing:0;
-  display:block;
-  text-align:center
-}
+
+
 .brand small {
   display:block;
   font-size:8px;
@@ -676,9 +663,7 @@ legend,.name-field>label {
 .footer .brand {
   font-size:10px
 }
-.footer .brand-mark {
-  font-size:27px
-}
+
 .footer .brand small {
   font-size:6px
 }
@@ -755,10 +740,7 @@ legend,.name-field>label {
   .brand small {
     font-size:7px
   }
-  .brand-mark {
-    font-size:30px;
-    padding-right:12px
-  }
+
   .hero {
     grid-template-columns:1fr;
     padding-block:48px 35px;
