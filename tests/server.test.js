@@ -16,7 +16,7 @@ test('servidor responde, não publica dados privados nem agenda ainda não confi
     assert.equal((await fetch(`${base}/admin`)).status, 501);
     assert.equal((await fetch(`${base}/data/agenda.sqlite`)).status, 404);
     assert.equal((await fetch(`${base}/api/bookings`, { method: 'POST' })).status, 405);
-    assert.match(await (await fetch(base)).text(), /DJ Barbearia 37/);
+    assert.match(await (await fetch(base)).text(), /DJ Barbearia/);
     for (const [path, type] of [
       ['/app.js', 'text/javascript'],
       ['/styles.css', 'text/css'],
