@@ -3,7 +3,10 @@
 ## 1 — Estrutura (entregue)
 - [x] Git local, organização, scripts, CI e documentação.
 - [x] Migração de banco e repositório interno de bloqueio com teste concorrente.
-- [x] Página inicial provisória, health check e catálogo desativado.
+- [x] Health check e catálogo de reservas desativado.
+- [x] Landing page com logo, serviços, valores de referência, modalidades e FAQ.
+- [x] Consulta pelo WhatsApp com seleção de serviços; não cria reserva.
+- [ ] Confirmar contatos do logo e adicionar fotos reais autorizadas.
 
 ## 2 — Agenda e segurança
 - [ ] Login administrativo e sessões; criação segura do primeiro usuário.

@@ -17,6 +17,18 @@ test('servidor responde, não publica dados privados nem agenda ainda não confi
     assert.equal((await fetch(`${base}/data/agenda.sqlite`)).status, 404);
     assert.equal((await fetch(`${base}/api/bookings`, { method: 'POST' })).status, 405);
     assert.match(await (await fetch(base)).text(), /DJ Barbearia 37/);
+    for (const [path, type] of [
+      ['/app.js', 'text/javascript'],
+      ['/styles.css', 'text/css'],
+      ['/assets/logo-dj-barbearia.jpeg', 'image/jpeg'],
+      ['/assets/favicon.svg', 'image/svg+xml'],
+    ]) {
+      const asset = await fetch(base + path);
+      assert.equal(asset.status, 200, path);
+      assert.ok(asset.headers.get('content-type').startsWith(type), path);
+      assert.ok((await asset.arrayBuffer()).byteLength > 0, path);
+    }
+    assert.equal((await fetch(`${base}/assets/unknown.jpeg`)).status, 404);
   } finally {
     await new Promise(resolve => app.close(resolve)); db.close();
   }

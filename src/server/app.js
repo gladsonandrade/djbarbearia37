@@ -6,6 +6,9 @@ import { readFileSync } from 'node:fs';
 const publicFiles = new Map([
   ['/', ['../../web/public/index.html', 'text/html; charset=utf-8']],
   ['/styles.css', ['../../web/public/styles.css', 'text/css; charset=utf-8']],
+  ['/app.js', ['../../web/public/app.js', 'text/javascript; charset=utf-8']],
+  ['/assets/logo-dj-barbearia.jpeg', ['../../web/public/assets/logo-dj-barbearia.jpeg', 'image/jpeg']],
+  ['/assets/favicon.svg', ['../../web/public/assets/favicon.svg', 'image/svg+xml']],
 ]);
 
 export function createApp(db) {
@@ -23,7 +26,7 @@ export function createApp(db) {
       if (request.method !== 'GET') return json(405, { error: 'METHOD_NOT_ALLOWED' });
       if (path === '/api/health') {
         db.prepare('SELECT 1').get();
-        return json(200, { status: 'ok', version: '0.1.0', stage: 'scaffold' });
+        return json(200, { status: 'ok', version: '0.1.0', stage: 'landing' });
       }
       if (path === '/api/services') {
         return json(200, { services: db.prepare('SELECT id, name, price_cents, duration_minutes FROM services WHERE active = 1').all() });

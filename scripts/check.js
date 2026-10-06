@@ -11,5 +11,5 @@ function visit(directory) {
     }
   }
 }
-for (const directory of ['src', 'scripts', 'tests']) visit(directory);
+for (const directory of ['src', 'scripts', 'tests', 'web/public']) visit(directory);
 console.log('Sintaxe verificada.');

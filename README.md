@@ -4,7 +4,7 @@ Site e sistema de agendamento para a DJ Barbearia 37, pensado para organizar os 
 
 Projeto de portfólio de [Gladson Andrade](https://github.com/gladsonandrade), desenvolvido a partir de uma necessidade real: mostrar horários atualizados, evitar reservas simultâneas e facilitar a organização diária pelo celular.
 
-**Status: estrutura inicial em desenvolvimento.** A base técnica está implementada; o fluxo completo de reservas e o painel ainda serão construídos. O sistema ainda não está disponível para uso por clientes.
+**Status: landing page implementada; agenda em desenvolvimento.** A página apresenta serviços, valores de referência, modalidades e consulta pelo WhatsApp. A seleção de horários com reserva e o painel ainda serão construídos. A consulta atual não bloqueia horários.
 
 ## Experiência planejada
 
@@ -20,7 +20,7 @@ O painel terá visões por dia e semana, registro de atendimentos e faltas, ajus
 
 - **Node.js 24 e JavaScript:** servidor HTTP, regras de negócio e testes com recursos nativos.
 - **SQLite:** persistência local com migrações, transações e backup consistente.
-- **HTML e CSS:** página pública inicial, preparada para evolução da interface.
+- **HTML, CSS e JavaScript:** landing page responsiva com logo, serviços e montagem da mensagem de consulta.
 - **GitHub Actions:** verificação de sintaxe e execução automatizada dos testes.
 
 A arquitetura separa interface, regras de agenda e persistência. A proposta é começar com hospedagem em Raspberry Pi e permitir migração futura para hospedagem paga; a instalação no dispositivo ainda precisa ser validada.
@@ -51,7 +51,7 @@ O Node pode emitir aviso de API experimental para `node:sqlite`. O acesso ao ban
 
 | Pasta | Responsabilidade |
 |---|---|
-| `web/public` | Página pública inicial; interface final ainda será desenvolvida |
+| `web/public` | Landing page, estilos, logo e consulta pelo WhatsApp |
 | `web/admin` | Especificação da interface administrativa |
 | `src/server` | Servidor HTTP e rotas |
 | `src/domain` | Regras puras de agenda, horários e estados |
@@ -64,7 +64,8 @@ O Node pode emitir aviso de API experimental para `node:sqlite`. O acesso ao ban
 
 ## Já implementado nesta base
 
-- Servidor local com página de apresentação e `GET /api/health`.
+- Landing page com identidade visual, serviços, modalidades, FAQ e seleção de serviços para WhatsApp.
+- Servidor local com recursos públicos permitidos explicitamente e `GET /api/health`.
 - Banco inicial, migrações repetíveis e catálogo desativado até confirmar preços e durações.
 - Regras de término às 20h, tolerância de atraso até 20h10 e separação entre atendimento futuro e encerrado.
 - Repositório interno com criação atômica de bloqueio temporário, expiração e proteção de conflitos entre modalidades.
@@ -72,7 +73,7 @@ O Node pode emitir aviso de API experimental para `node:sqlite`. O acesso ao ban
 
 ## Ainda não implementado
 
-Login, painel, geração completa de disponibilidade, reservas pelo navegador, link privado, WhatsApp, gestão de serviços/fotos, remarcação e ajuste coletivo de atrasos, exportação PDF/ICS e instalação de produção.
+Login, painel, geração completa de disponibilidade, reservas pelo navegador, link privado, WhatsApp associado à reserva, gestão de serviços/fotos, remarcação e ajuste coletivo de atrasos, exportação PDF/ICS e instalação de produção.
 
 A rotina interna de reserva já testa conflitos, mas ainda exige a camada de validação de expediente, catálogo, antecedência e proteção contra abuso. **Nenhuma rota pública de gravação está habilitada.**
 
@@ -85,3 +86,11 @@ Leia [escopo](docs/escopo.md), [arquitetura](docs/arquitetura.md) e [próximas e
 As próximas entregas e os critérios do MVP estão em [roadmap](docs/roadmap.md). Preços, duração dos serviços e janelas de atendimento precisam ser confirmados antes de habilitar reservas públicas.
 
 Não versionar `.env`, banco, backups, dados reais de clientes ou certificados. Não há licença de código aberto definida.
+
+## Conteúdo da página
+
+O logo é o arquivo fornecido pelo proprietário do projeto, preservado sem alterações. Os preços são referências do questionário respondido por Dalvan e aparecem como sujeitos à confirmação. A página usa o telefone e o Instagram impressos no logo; confirmar se continuam atuais antes de divulgar. Há divergência entre o Instagram do logo (`dj_barbearia37`) e o questionário (`djbarbearia37`).
+
+A consulta pelo WhatsApp monta uma mensagem no navegador, sem enviar automaticamente, persistir nome ou criar reserva. O visitante precisa enviar a mensagem e combinar o atendimento. Não há fotos de clientes, depoimentos ou horários fictícios.
+
+Veja [Instagram](docs/instagram.md) para a integração planejada.
