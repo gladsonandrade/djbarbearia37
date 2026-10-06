@@ -11,7 +11,7 @@
   --wine:#7d1820;
   --dark:#131722;
   --max:1220px;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:"Manrope",ui-sans-serif,system-ui,sans-serif;
   background:var(--bg);
   color:var(--text);
   scroll-behavior:smooth;
@@ -45,7 +45,7 @@ input,button{font:inherit}
 }
 .brand-mark img{width:100%;height:100%;object-fit:cover}
 .brand>span:last-child{display:flex;flex-direction:column;line-height:1}
-.brand strong{font-size:13px;letter-spacing:.11em;font-weight:900}
+.brand strong{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:18px;letter-spacing:.06em;font-weight:800}
 .brand small{margin-top:7px;color:var(--muted);font-size:10px;letter-spacing:.08em}
 .site-header nav{display:flex;justify-content:center;gap:30px;color:#555f70;font-size:12px}
 .site-header nav a:hover{color:var(--red)}
@@ -56,57 +56,131 @@ input,button{font:inherit}
 }
 .header-cta:hover{background:var(--red);transform:translateY(-1px)}
 
-.hero{padding-top:26px}
-.hero-grid{
-  display:grid;grid-template-columns:minmax(0,.95fr) minmax(420px,1.05fr);
-  gap:66px;align-items:center;padding-block:70px 88px
+.hero{padding:34px 0 72px}
+.hero-panel{
+  min-height:620px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  padding:72px 64px;
+  border:1px solid #d9dde3;
+  border-radius:30px;
+  background-image:
+    linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.96) 34%,rgba(255,255,255,.76) 51%,rgba(255,255,255,.18) 77%,rgba(255,255,255,.05) 100%),
+    url("assets/logo-dj-barbearia.jpeg");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 24px 70px rgba(17,24,39,.10)
+}
+.hero-panel:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:120px;
+  background:linear-gradient(to top,rgba(17,24,39,.16),transparent);
+  pointer-events:none
+}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  width:min(570px,58%)
 }
 .eyebrow{
-  margin:0 0 22px;color:var(--red);font-size:10px;font-weight:900;letter-spacing:.19em
+  margin:0 0 22px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.19em
+}
+h1,h2,h3{
+  font-family:"Barlow Condensed","Arial Narrow",sans-serif
 }
 h1,h2,h3,p{margin-top:0}
 h1{
-  margin-bottom:30px;font-size:clamp(74px,8.4vw,128px);line-height:.8;
-  letter-spacing:-.082em;font-weight:950;color:var(--dark)
+  margin-bottom:28px;
+  color:var(--dark);
+  font-size:clamp(76px,8.7vw,132px);
+  line-height:.78;
+  letter-spacing:-.045em;
+  font-weight:900;
+  text-transform:uppercase
 }
 h1 span{
-  display:block;margin-top:10px;color:var(--red);font-size:.44em;line-height:1.1;letter-spacing:.06em
+  display:inline-block;
+  margin-top:12px;
+  color:var(--red);
+  font-size:.56em;
+  line-height:.95;
+  letter-spacing:.025em
 }
-.lead{max-width:500px;margin-bottom:34px;color:var(--muted);font-size:15px;line-height:1.75}
+.lead{
+  max-width:490px;
+  margin-bottom:34px;
+  color:#4f5a6b;
+  font-size:15px;
+  line-height:1.75
+}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn{
-  min-height:52px;padding:15px 19px;display:inline-flex;align-items:center;justify-content:space-between;
-  gap:32px;border-radius:13px;border:1px solid transparent;font-size:12px;font-weight:800;
+  min-height:52px;
+  padding:15px 19px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  border-radius:13px;
+  border:1px solid transparent;
+  font-size:12px;
+  font-weight:800;
   transition:.2s
 }
 .btn:hover{transform:translateY(-2px)}
 .primary{background:var(--red);color:#fff;box-shadow:0 10px 24px rgba(179,38,45,.16)}
 .primary:hover{background:var(--red2)}
-.ghost{background:#fff;border-color:var(--line);color:var(--dark)}
-.ghost:hover{border-color:#c9ced6;background:#fafafa}
+.ghost{
+  background:rgba(255,255,255,.88);
+  border-color:#d7dbe1;
+  color:var(--dark);
+  backdrop-filter:blur(6px)
+}
+.ghost:hover{background:#fff;border-color:#c5cad2}
 .hero-tags{
-  margin-top:34px;padding-top:19px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 20px;
-  color:#7b8494;font-size:10px;letter-spacing:.08em;text-transform:uppercase
+  margin-top:34px;
+  padding-top:18px;
+  border-top:1px solid rgba(17,24,39,.13);
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 20px;
+  color:#6c7686;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase
 }
 .hero-tags span:not(:last-child):after{content:"·";margin-left:20px;color:var(--red)}
-
-.hero-card{
-  min-width:0;min-height:500px;background:#fff;border:1px solid var(--line);
-  border-radius:28px;overflow:hidden;box-shadow:0 24px 70px rgba(17,24,39,.09)
+.hero-brand-note{
+  position:absolute;
+  right:34px;
+  bottom:28px;
+  z-index:2;
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+  color:rgba(255,255,255,.86);
+  text-shadow:0 2px 16px rgba(0,0,0,.32)
 }
-.hero-card-head,.hero-card-foot{
-  min-height:58px;padding-inline:22px;display:flex;align-items:center;justify-content:space-between;
-  color:#8c95a4;font-size:9px;font-weight:850;letter-spacing:.13em
+.hero-brand-note span{
+  font-family:"Barlow Condensed","Arial Narrow",sans-serif;
+  font-size:64px;
+  line-height:.72;
+  font-weight:900;
+  letter-spacing:-.04em
 }
-.hero-card-head{border-bottom:1px solid var(--line)}
-.hero-card-foot{border-top:1px solid var(--line)}
-.logo-stage{
-  min-height:382px;padding:42px;display:grid;place-items:center;
-  background:linear-gradient(180deg,#fff,#f5f6f8)
-}
-.logo-stage img{
-  width:min(440px,90%);aspect-ratio:16/10;object-fit:cover;border-radius:20px;
-  box-shadow:0 20px 45px rgba(17,24,39,.15)
+.hero-brand-note small{
+  margin-bottom:2px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.2em
 }
 
 .section{padding-block:105px}
@@ -114,10 +188,7 @@ h1 span{
   display:grid;grid-template-columns:1fr minmax(260px,390px);gap:40px;align-items:end;margin-bottom:46px
 }
 .section-head>p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
-h2{
-  margin-bottom:0;max-width:780px;font-size:clamp(38px,5vw,64px);
-  line-height:1.02;letter-spacing:-.055em;font-weight:850;color:var(--dark)
-}
+h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:.98;letter-spacing:-.035em;font-weight:800;color:var(--dark)}
 
 .service-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .service-row{
@@ -128,7 +199,7 @@ h2{
 .service-row:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(17,24,39,.08)}
 .service-row>span{color:#9aa3b1;font-size:10px;letter-spacing:.12em;padding-top:4px}
 .service-row>div{min-width:0}
-.service-row h3{margin-bottom:8px;font-size:22px;letter-spacing:-.025em}
+.service-row h3{margin-bottom:8px;font-size:28px;line-height:1;letter-spacing:-.02em;font-weight:700}
 .service-row p{margin-bottom:0;color:var(--muted);font-size:13px;line-height:1.6}
 .service-row>strong{
   grid-column:2;font-size:17px;color:var(--dark);align-self:end
@@ -176,7 +247,7 @@ h2{
 }
 .attendance-grid .home{background:#fff7f7;border-color:#ead4d6}
 .number{color:#9aa3b1;font-size:10px}
-.attendance-grid h3{margin-bottom:18px;font-size:29px;letter-spacing:-.035em}
+.attendance-grid h3{margin-bottom:18px;font-size:36px;line-height:1;letter-spacing:-.025em;font-weight:700}
 .attendance-grid p{max-width:390px;margin-bottom:32px;color:var(--muted);font-size:13px;line-height:1.75}
 .attendance-grid a{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--red)}
 .title-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
@@ -230,7 +301,8 @@ h2{
   .wrap{width:min(var(--max),calc(100% - 44px))}
   .site-header{width:calc(100% - 44px);grid-template-columns:1fr auto}
   .site-header nav{display:none}
-  .hero-grid{grid-template-columns:1fr;gap:50px;padding-top:58px}
+  .hero-panel{min-height:570px;padding:60px 46px;background-position:58% center}
+  .hero-copy{width:min(590px,72%)}
   .section-head{grid-template-columns:1fr}
   .works-grid,.contact-grid{grid-template-columns:1fr}
   .works-grid{gap:46px}
@@ -247,13 +319,16 @@ h2{
   .brand-mark{width:40px;height:40px}
   .brand strong{font-size:11px}.brand small{font-size:9px}
   .header-cta{min-width:auto;padding:11px 13px}.header-cta span{display:none}
-  .hero-grid{padding-block:48px 64px}
-  h1{font-size:clamp(62px,23vw,92px)}
+  .hero{padding:20px 0 52px}
+  .hero-panel{min-height:590px;padding:44px 24px;background-position:64% center;border-radius:20px}
+  .hero-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.98) 0 58%,rgba(255,255,255,.72) 76%,rgba(255,255,255,.18) 100%)}
+  .hero-copy{width:88%}
+  h1{font-size:clamp(68px,21vw,104px)}
+  h1 span{font-size:.5em}
   .hero-actions{display:grid;grid-template-columns:1fr}
   .btn{width:100%}
-  .hero-card{min-height:390px;border-radius:20px}
-  .logo-stage{min-height:300px;padding:25px}
-  .logo-stage img{width:100%;border-radius:14px}
+  .hero-brand-note{right:18px;bottom:18px}
+  .hero-brand-note span{font-size:48px}
   .section{padding-block:78px}
   h2{font-size:clamp(36px,12vw,48px)}
   .service-row{min-height:160px;padding:22px}
