@@ -25,6 +25,12 @@ O painel terá visões por dia e semana, registro de atendimentos e faltas, ajus
 
 A arquitetura separa interface, regras de agenda e persistência. A proposta é começar com hospedagem em Raspberry Pi e permitir migração futura para hospedagem paga; a instalação no dispositivo ainda precisa ser validada.
 
+## Visualizar no GitHub Pages
+
+Publicação estática preparada para `https://gladsonandrade.github.io/djbarbearia37/`. A primeira ativação precisa ser concluída em Settings → Pages, escolhendo GitHub Actions. Consulte o [passo a passo](deploy/github-pages.md). O endereço só fica disponível depois da publicação bem-sucedida.
+
+O GitHub Pages exibe a landing page e o link do WhatsApp. A agenda, o banco e o painel dependem do servidor Node.js.
+
 ## Executar
 
 Requer Node.js **24.x** e Git. Nesta base não há dependências externas de execução.

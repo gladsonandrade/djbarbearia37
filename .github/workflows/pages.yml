@@ -1,0 +1,40 @@
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/public/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Enviar somente a página pública
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: web/public
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
