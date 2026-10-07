@@ -260,36 +260,127 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
 }
 .fine{margin:18px 0 0;color:#8b94a3;font-size:10px}
 
-.works{background:#eef1f4;border-block:1px solid var(--line)}
+.works{
+  background:#eef1f4;
+  border-block:1px solid var(--line)
+}
 .works-grid{
-  min-height:610px;padding-block:95px;display:grid;grid-template-columns:.82fr 1.18fr;gap:72px;align-items:center
+  min-height:650px;
+  padding-block:96px;
+  display:grid;
+  grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+  gap:72px;
+  align-items:center
 }
-.works-text{max-width:500px;margin:28px 0 34px;color:var(--muted);font-size:14px;line-height:1.8}
-.insta-handle{
-  display:inline-flex;gap:18px;padding:13px 16px;background:#fff;border:1px solid var(--line);border-radius:13px;
-  font-size:13px;font-weight:800;box-shadow:0 8px 22px rgba(17,24,39,.05)
+.works-copy{max-width:440px}
+.works-text{
+  max-width:430px;
+  margin:28px 0 30px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8
 }
-.insta-handle span{color:var(--red)}
+.instagram-link{
+  width:min(100%,330px);
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  align-items:center;
+  gap:13px;
+  padding:12px 14px;
+  border:1px solid #d9dde3;
+  border-radius:15px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 10px 28px rgba(17,24,39,.06);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+}
+.instagram-link:hover{
+  transform:translateY(-2px);
+  border-color:rgba(179,38,45,.28);
+  box-shadow:0 14px 34px rgba(17,24,39,.09)
+}
+.instagram-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:var(--dark);
+  color:#fff
+}
+.instagram-icon svg{width:22px;height:22px}
+.instagram-link>span:nth-child(2){
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:3px
+}
+.instagram-link small{
+  color:#8a93a2;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.14em
+}
+.instagram-link strong{
+  overflow:hidden;
+  color:var(--dark);
+  font-size:13px;
+  font-weight:800;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+.instagram-arrow{
+  color:var(--red);
+  font-size:15px;
+  font-weight:800
+}
 
-.insta-card{
-  display:block;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;
-  box-shadow:0 18px 48px rgba(17,24,39,.08)
+.work-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px
 }
-.insta-top,.insta-bottom{
-  min-height:56px;padding-inline:20px;display:flex;align-items:center;justify-content:space-between;
-  color:#8992a0;font-size:9px;font-weight:850;letter-spacing:.14em
+.work-photo{
+  position:relative;
+  min-height:260px;
+  margin:0;
+  overflow:hidden;
+  border-radius:20px;
+  background:#d8dadd;
+  box-shadow:0 16px 40px rgba(17,24,39,.10)
 }
-.insta-top{border-bottom:1px solid var(--line)}
-.insta-bottom{border-top:1px solid var(--line);justify-content:flex-start;gap:22px;flex-wrap:wrap}
-.insta-body{display:grid;grid-template-columns:minmax(220px,.9fr) 1.1fr;min-height:380px}
-.insta-body>img{
-  width:100%;height:100%;object-fit:cover;max-height:380px;padding:26px;background:#f6f7f9;
-  border-right:1px solid var(--line)
+.work-photo:nth-child(1),
+.work-photo:nth-child(4){min-height:300px}
+.work-photo img{
+  width:100%;
+  height:100%;
+  min-height:inherit;
+  object-fit:cover;
+  transition:transform .35s ease
 }
-.insta-body>div{padding:34px;display:flex;flex-direction:column;justify-content:flex-end}
-.insta-body small{margin-bottom:14px;color:var(--red);font-size:9px;font-weight:900;letter-spacing:.14em}
-.insta-body strong{max-width:330px;font-size:clamp(25px,3vw,38px);line-height:1.05;letter-spacing:-.04em;color:var(--dark)}
-.insta-body span{margin-top:29px;color:var(--red);font-size:11px;font-weight:800}
+.work-photo:nth-child(1) img{object-position:center 42%}
+.work-photo:nth-child(2) img{object-position:center 42%}
+.work-photo:nth-child(3) img{object-position:center 35%}
+.work-photo:nth-child(4) img{object-position:center 46%}
+.work-photo:hover img{transform:scale(1.025)}
+.work-photo::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:38%;
+  background:linear-gradient(to top,rgba(11,15,23,.70),transparent);
+  pointer-events:none
+}
+.work-photo figcaption{
+  position:absolute;
+  z-index:2;
+  left:16px;
+  bottom:14px;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase
+}
 
 .attendance-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .attendance-grid article{
@@ -382,6 +473,7 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   .section-head{grid-template-columns:1fr}
   .works-grid,.contact-grid{grid-template-columns:1fr}
   .works-grid{gap:46px}
+  .works-copy{max-width:560px}
   .contact-grid{gap:54px}
   .footer{grid-template-columns:1fr auto}
   .footer>a:last-child{grid-column:1/-1;justify-self:start;padding-bottom:28px}
@@ -463,8 +555,25 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   h2{font-size:clamp(36px,12vw,48px)}
   .service-row{min-height:160px;padding:22px}
   .works-grid{min-height:auto;padding-block:75px}
-  .insta-body{grid-template-columns:1fr}
-  .insta-body>img{border-right:0;border-bottom:1px solid var(--line);max-height:330px}
+  .work-gallery{
+    margin-right:-15px;
+    padding-right:15px;
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:78%;
+    grid-template-columns:none;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none
+  }
+  .work-gallery::-webkit-scrollbar{display:none}
+  .work-photo,
+  .work-photo:nth-child(1),
+  .work-photo:nth-child(4){
+    min-height:390px;
+    scroll-snap-align:start
+  }
   .attendance-grid article{grid-template-columns:32px 1fr;padding:26px 20px}
   .contact{padding-block:76px}
   .contact-form{padding:24px 18px;border-radius:18px}
