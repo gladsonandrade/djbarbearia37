@@ -196,13 +196,63 @@ h1 span{
   border-top:1px solid rgba(17,24,39,.13);
   display:flex;
   flex-wrap:wrap;
-  gap:10px 20px;
-  color:#6c7686;
-  font-size:10px;
-  letter-spacing:.08em;
-  text-transform:uppercase
+  gap:12px;
 }
-.hero-tags span:not(:last-child):after{content:"·";margin-left:20px;color:var(--red)}
+.hero-service-chip{
+  min-width:230px;
+  display:grid;
+  grid-template-columns:38px 1fr auto;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  border:1px solid rgba(17,24,39,.10);
+  border-radius:14px;
+  background:rgba(255,255,255,.58);
+  backdrop-filter:blur(8px);
+  box-shadow:0 8px 22px rgba(17,24,39,.05);
+  transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.hero-service-chip:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.82);
+  border-color:rgba(179,38,45,.24);
+  box-shadow:0 12px 28px rgba(17,24,39,.08);
+}
+.hero-service-icon{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:rgba(179,38,45,.10);
+  color:var(--red);
+}
+.hero-service-icon svg{
+  width:21px;
+  height:21px;
+}
+.hero-service-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.hero-service-copy strong{
+  color:var(--dark);
+  font-size:12px;
+  line-height:1.2;
+  font-weight:800;
+}
+.hero-service-copy small{
+  color:#7a8494;
+  font-size:9px;
+  line-height:1.35;
+}
+.hero-service-arrow{
+  color:var(--red);
+  font-size:13px;
+  font-weight:800;
+}
 .section{padding-block:105px}
 .section-head{
   display:grid;grid-template-columns:1fr minmax(260px,390px);gap:40px;align-items:end;margin-bottom:46px
@@ -423,4 +473,18 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   .choices{grid-template-columns:1fr}
   .footer{min-height:180px;grid-template-columns:1fr;align-content:center;gap:18px}
   .footer>a:last-child{grid-column:auto;padding-bottom:0}
+}
+@media(max-width:640px){
+  .hero-tags{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:9px;
+  }
+  .hero-service-chip{
+    min-width:0;
+    width:100%;
+    padding:11px 12px;
+  }
+  .hero-service-copy strong{font-size:12px}
+  .hero-service-copy small{font-size:9px}
 }
