@@ -6,6 +6,7 @@ on:
     paths:
       - 'web/public/**'
       - '.github/workflows/pages.yml'
+      - '.github/scripts/**'
   workflow_dispatch:
 
 permissions:
