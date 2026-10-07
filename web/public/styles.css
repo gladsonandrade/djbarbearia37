@@ -431,13 +431,30 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
       )
   }
   .hero-logo-bg{
-    left:78%;
-    top:53%;
-    height:50%;
-    opacity:.26
+    left:84%;
+    top:52%;
+    height:48%;
+    opacity:.18
   }
   .hero-panel{min-height:700px;padding-block:162px 54px}
-  .hero-copy{width:90%}
+  .hero-copy{
+    width:94%;
+    padding:14px 18px 14px 0;
+    background:linear-gradient(
+      90deg,
+      rgba(248,248,248,.97) 0%,
+      rgba(248,248,248,.92) 48%,
+      rgba(248,248,248,.74) 68%,
+      rgba(248,248,248,0) 100%
+    );
+  }
+  .hero-copy .lead{
+    color:#344054;
+    font-size:15.5px;
+    line-height:1.72;
+    font-weight:500;
+    text-shadow:0 1px 0 rgba(255,255,255,.45);
+  }
   h1{font-size:clamp(68px,21vw,104px)}
   h1 span{font-size:.5em}
   .hero-actions{display:grid;grid-template-columns:1fr}
