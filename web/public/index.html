@@ -95,8 +95,8 @@
   <div class="wrap works-grid">
     <div class="works-copy">
       <p class="eyebrow">TRABALHOS</p>
-      <h2>Resultados reais, feitos na cadeira.</h2>
-      <p class="works-text">Alguns cortes, barbas e acabamentos feitos por Dalvan. Para ver mais trabalhos e novidades, acompanhe a barbearia no Instagram.</p>
+      <h2>Meu trabalho, do jeito que sai da cadeira.</h2>
+      <p class="works-text">Aqui você vê um pouco do meu trabalho no dia a dia — cortes, barbas e acabamentos feitos por mim. No Instagram eu posto mais resultados e os trabalhos mais recentes.</p>
 
       <a class="instagram-link" href="https://www.instagram.com/dj_barbearia37/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram da DJ Barbearia">
         <span class="instagram-icon" aria-hidden="true">
@@ -116,27 +116,45 @@
 
     <div class="work-gallery" aria-label="Galeria de trabalhos da DJ Barbearia">
       <figure class="work-photo">
-        <img src="assets/trabalho-corte.webp" alt="Corte masculino com degradê e acabamento" loading="lazy">
+        <button class="work-photo-open" type="button" data-full="assets/trabalho-corte.webp" data-caption="Corte & degradê" aria-label="Abrir foto: Corte e degradê">
+          <img src="assets/trabalho-corte.webp" alt="Corte masculino com degradê e acabamento" loading="lazy">
+          <span class="work-zoom" aria-hidden="true">⌕</span>
+        </button>
         <figcaption>Corte & degradê</figcaption>
       </figure>
 
       <figure class="work-photo">
-        <img src="assets/trabalho-barba.webp" alt="Barba alinhada e acabamento" loading="lazy">
+        <button class="work-photo-open" type="button" data-full="assets/trabalho-barba.webp" data-caption="Barba & acabamento" aria-label="Abrir foto: Barba e acabamento">
+          <img src="assets/trabalho-barba.webp" alt="Barba alinhada e acabamento" loading="lazy">
+          <span class="work-zoom" aria-hidden="true">⌕</span>
+        </button>
         <figcaption>Barba & acabamento</figcaption>
       </figure>
 
       <figure class="work-photo">
-        <img src="assets/trabalho-estilo.webp" alt="Corte com cabelo cacheado e barba desenhada" loading="lazy">
+        <button class="work-photo-open" type="button" data-full="assets/trabalho-estilo.webp" data-caption="Estilo & desenho" aria-label="Abrir foto: Estilo e desenho">
+          <img src="assets/trabalho-estilo.webp" alt="Corte com cabelo cacheado e barba desenhada" loading="lazy">
+          <span class="work-zoom" aria-hidden="true">⌕</span>
+        </button>
         <figcaption>Estilo & desenho</figcaption>
       </figure>
 
       <figure class="work-photo">
-        <img src="assets/trabalho-barbeiro.webp" alt="Dalvan realizando atendimento na barbearia" loading="lazy">
+        <button class="work-photo-open" type="button" data-full="assets/trabalho-barbeiro.webp" data-caption="Atendimento" aria-label="Abrir foto: Atendimento">
+          <img src="assets/trabalho-barbeiro.webp" alt="Dalvan realizando atendimento na barbearia" loading="lazy">
+          <span class="work-zoom" aria-hidden="true">⌕</span>
+        </button>
         <figcaption>Atendimento</figcaption>
       </figure>
     </div>
   </div>
 </section>
+
+<dialog class="work-lightbox" id="work-lightbox" aria-label="Visualização ampliada do trabalho">
+  <button class="work-lightbox-close" type="button" aria-label="Fechar foto">×</button>
+  <img id="work-lightbox-image" src="" alt="">
+  <p id="work-lightbox-caption"></p>
+</dialog>
 
 <section class="section wrap" id="atendimento">
   <div class="section-head">
