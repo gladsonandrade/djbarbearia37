@@ -40,10 +40,10 @@ alpha = np.where(
     0,
 ).astype("uint8")
 
-# Fecha pequenas falhas e suaviza apenas a borda do recorte.
+# Fecha pequenas falhas, mas mantém a borda firme para não criar halo/cinza.
 kernel = np.ones((3, 3), np.uint8)
 alpha = cv2.morphologyEx(alpha, cv2.MORPH_CLOSE, kernel, iterations=1)
-alpha = cv2.GaussianBlur(alpha, (3, 3), 0)
+alpha = np.where(alpha > 127, 255, 0).astype("uint8")
 
 ys, xs = np.where(alpha > 8)
 if len(xs) == 0 or len(ys) == 0:
@@ -58,19 +58,20 @@ y1 = min(height, int(ys.max()) + 1 + padding)
 b, g, r = cv2.split(image)
 rgba = cv2.merge([b, g, r, alpha])[y0:y1, x0:x1]
 
-# Upscale moderado + unsharp mask para evitar aspecto lavado em telas de alta densidade.
+# Mantém o desenho fiel e dá nitidez leve sem borrar o canal alpha.
 rgb = rgba[:, :, :3]
 a = rgba[:, :, 3]
-blur = cv2.GaussianBlur(rgb, (0, 0), 1.0)
-rgb = cv2.addWeighted(rgb, 1.28, blur, -0.28, 0)
 
-scale = 1.6
+scale = 1.45
 target = (
     max(1, round(rgba.shape[1] * scale)),
     max(1, round(rgba.shape[0] * scale)),
 )
 rgb = cv2.resize(rgb, target, interpolation=cv2.INTER_LANCZOS4)
-a = cv2.resize(a, target, interpolation=cv2.INTER_LANCZOS4)
+a = cv2.resize(a, target, interpolation=cv2.INTER_NEAREST)
+
+blur = cv2.GaussianBlur(rgb, (0, 0), 0.75)
+rgb = cv2.addWeighted(rgb, 1.18, blur, -0.18, 0)
 
 output = np.dstack([rgb, a])
 cv2.imwrite(str(DST), output, [cv2.IMWRITE_PNG_COMPRESSION, 9])
