@@ -37,3 +37,26 @@ document.querySelectorAll('[data-mode]').forEach(link => {
 });
 updateMessage();
 
+
+
+const workLightbox = document.querySelector('#work-lightbox');
+const workLightboxImage = document.querySelector('#work-lightbox-image');
+const workLightboxCaption = document.querySelector('#work-lightbox-caption');
+const workLightboxClose = document.querySelector('.work-lightbox-close');
+
+document.querySelectorAll('.work-photo-open').forEach(button => {
+  button.addEventListener('click', () => {
+    if (!workLightbox || !workLightboxImage || !workLightboxCaption) return;
+
+    workLightboxImage.src = button.dataset.full || '';
+    workLightboxImage.alt = button.getAttribute('aria-label')?.replace('Abrir foto: ', '') || 'Trabalho da DJ Barbearia';
+    workLightboxCaption.textContent = button.dataset.caption || '';
+    workLightbox.showModal();
+  });
+});
+
+workLightboxClose?.addEventListener('click', () => workLightbox?.close());
+
+workLightbox?.addEventListener('click', event => {
+  if (event.target === workLightbox) workLightbox.close();
+});
