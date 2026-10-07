@@ -29,6 +29,10 @@ jobs:
     steps:
       - name: Baixar projeto
         uses: actions/checkout@v4
+      - name: Preparar logo em alta resolução
+        run: |
+          python3 -m pip install --quiet opencv-python-headless
+          python3 .github/scripts/prepare_hero_logo.py
       - name: Configurar Pages
         uses: actions/configure-pages@v5
       - name: Enviar somente a página pública
