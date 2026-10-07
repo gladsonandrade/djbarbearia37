@@ -110,11 +110,11 @@ input,button{font:inherit}
   inset:0;
   z-index:0;
   pointer-events:none;
-  background-image:url("assets/logo-dj-transparent.svg");
+  background-image:url("assets/logo-dj-transparent.png");
   background-repeat:no-repeat;
-  background-size:auto 64%;
-  background-position:60% center;
-  opacity:.22;
+  background-size:auto 68%;
+  background-position:61% center;
+  opacity:.28;
   filter:none
 }
 .hero-panel{
@@ -341,9 +341,9 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   }
   .hero{min-height:720px}
   .hero::before{
-    background-size:auto 56%;
-    background-position:68% center;
-    opacity:.20
+    background-size:auto 60%;
+    background-position:69% center;
+    opacity:.23
   }
   .hero-panel{min-height:720px;padding-block:158px 70px}
   .hero-copy{width:min(590px,66%)}
@@ -399,9 +399,9 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
       )
   }
   .hero::before{
-    background-size:auto 44%;
-    background-position:78% 52%;
-    opacity:.18
+    background-size:auto 50%;
+    background-position:79% 52%;
+    opacity:.21
   }
   .hero-panel{min-height:700px;padding-block:162px 54px}
   .hero-copy{width:90%}
