@@ -110,12 +110,12 @@ input,button{font:inherit}
   inset:0;
   z-index:0;
   pointer-events:none;
-  background-image:url("assets/logo-dj-barbearia.jpeg");
+  background-image:var(--hero-logo-image, none);
   background-repeat:no-repeat;
-  background-size:auto 72%;
-  background-position:57% center;
-  mix-blend-mode:screen;
-  opacity:.48
+  background-size:auto 70%;
+  background-position:58% center;
+  opacity:.30;
+  filter:saturate(.92) contrast(.98)
 }
 .hero-panel{
   min-height:760px;
@@ -341,9 +341,9 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   }
   .hero{min-height:720px}
   .hero::before{
-    background-size:auto 64%;
-    background-position:65% center;
-    opacity:.44
+    background-size:auto 60%;
+    background-position:66% center;
+    opacity:.26
   }
   .hero-panel{min-height:720px;padding-block:158px 70px}
   .hero-copy{width:min(590px,66%)}
@@ -399,9 +399,9 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
       )
   }
   .hero::before{
-    background-size:auto 52%;
-    background-position:72% 49%;
-    opacity:.40
+    background-size:auto 48%;
+    background-position:76% 50%;
+    opacity:.22
   }
   .hero-panel{min-height:700px;padding-block:162px 54px}
   .hero-copy{width:90%}
