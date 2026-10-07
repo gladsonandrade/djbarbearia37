@@ -287,16 +287,17 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   align-items:center;
   gap:14px;
   padding:14px 16px;
-  border:1px solid var(--dark);
+  border:1px solid rgba(125,24,32,.32);
   border-radius:16px;
-  background:var(--dark);
+  background:linear-gradient(135deg,#b3262d 0%,#c52f50 58%,#d65b38 100%);
   color:#fff;
-  box-shadow:0 14px 34px rgba(17,24,39,.16);
-  transition:transform .18s ease,box-shadow .18s ease
+  box-shadow:0 14px 34px rgba(179,38,45,.24);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease
 }
 .instagram-link:hover{
   transform:translateY(-2px);
-  box-shadow:0 18px 42px rgba(17,24,39,.22)
+  box-shadow:0 18px 42px rgba(179,38,45,.30);
+  filter:saturate(1.06)
 }
 .instagram-icon{
   width:48px;
@@ -304,8 +305,8 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   display:grid;
   place-items:center;
   border-radius:13px;
-  background:#fff;
-  color:var(--dark)
+  background:rgba(255,255,255,.96);
+  color:#c42d45
 }
 .instagram-icon svg{width:22px;height:22px}
 .instagram-link>span:nth-child(2){
@@ -315,7 +316,7 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   gap:3px
 }
 .instagram-link small{
-  color:#aeb6c2;
+  color:rgba(255,255,255,.76);
   font-size:8px;
   font-weight:850;
   letter-spacing:.14em
