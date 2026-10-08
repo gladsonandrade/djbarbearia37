@@ -258,8 +258,19 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
 .service-row>a{
   grid-column:2;justify-self:start;color:var(--red);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.08em
 }
-.fine{margin:18px 0 0;color:#7a8494;font-size:10px;line-height:1.55}
-.fine strong{color:#596273;font-weight:800}
+.fine{
+  width:fit-content;
+  max-width:100%;
+  margin:20px 0 0;
+  padding:10px 12px;
+  border:1px solid #ead7d9;
+  border-radius:10px;
+  background:#fff7f7;
+  color:#687386;
+  font-size:10px;
+  line-height:1.55
+}
+.fine strong{color:var(--wine);font-weight:850}
 
 .works{
   background:#eef1f4;
@@ -645,15 +656,13 @@ h2{margin-bottom:0;max-width:780px;font-size:clamp(42px,5.2vw,68px);line-height:
   overflow:hidden;
   border:1px solid #d9dde3;
   border-radius:9px;
-  background:#fff
+  background-color:#fff;
+  background-image:url("assets/logo-dj-transparent.webp?v=20261007-clean");
+  background-repeat:no-repeat;
+  background-size:54px auto;
+  background-position:center 48%
 }
-.footer-shop-mark img{
-  width:68px;
-  max-width:none;
-  height:auto;
-  display:block;
-  transform:translateY(-10px);
-}
+.footer-shop-mark img{display:none}
 .footer-instagram-mark{
   border:1px solid #d9dde3;
   border-radius:9px;
