@@ -16,7 +16,7 @@ function updateMessage() {
   whatsappLink.href = `https://wa.me/5579998424231?text=${encodeURIComponent(message)}`;
   modeNote.textContent = home
     ? 'Domingos em Malhador e Alecrim. Deslocamento combinado à parte.'
-    : 'Combine o dia e o horário diretamente com Dalvan.';
+    : 'Combine o dia e o horário pelo WhatsApp.';
 }
 form.addEventListener('input', updateMessage);
 form.addEventListener('change', updateMessage);
