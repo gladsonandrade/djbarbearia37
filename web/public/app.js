@@ -60,3 +60,15 @@ workLightboxClose?.addEventListener('click', () => workLightbox?.close());
 workLightbox?.addEventListener('click', event => {
   if (event.target === workLightbox) workLightbox.close();
 });
+
+
+document.querySelectorAll('[data-certificate-full]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (!workLightbox || !workLightboxImage || !workLightboxCaption) return;
+
+    workLightboxImage.src = button.dataset.certificateFull || '';
+    workLightboxImage.alt = button.getAttribute('aria-label') || 'Certificado da DJ Barbearia';
+    workLightboxCaption.textContent = button.dataset.certificateCaption || '';
+    workLightbox.showModal();
+  });
+});
