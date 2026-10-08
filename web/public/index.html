@@ -23,6 +23,7 @@
     <span><strong>DJ BARBEARIA</strong></span>
   </a>
   <nav aria-label="Navegação principal">
+    <a href="#sobre">Sobre nós</a>
     <a href="#servicos">Serviços</a>
     <a href="#trabalhos">Trabalhos</a>
     <a href="#atendimento">Atendimento</a>
@@ -79,34 +80,57 @@
 
 
 <section class="about-section" id="sobre">
-  <div class="wrap about-grid">
-    <div class="about-photo">
-      <img src="assets/trabalho-barbeiro.webp" alt="Dalvan durante atendimento na DJ Barbearia" loading="lazy">
-      <div class="about-photo-label">
-        <span>DJ BARBEARIA</span>
-        <strong>Itabaiana · SE</strong>
-      </div>
+  <div class="wrap about-shell">
+    <div class="about-heading">
+      <p class="eyebrow">SOBRE NÓS</p>
+      <h2>Conheça a DJ Barbearia.</h2>
+      <p>Um espaço para contar a história da barbearia, apresentar o profissional e mostrar as formações que fazem parte dessa trajetória.</p>
     </div>
 
-    <div class="about-copy">
-      <p class="eyebrow">SOBRE NÓS</p>
-      <h2>Um atendimento simples, direto e bem feito.</h2>
+    <div class="about-story-grid">
+      <article class="about-story-card">
+        <span class="about-kicker">NOSSA HISTÓRIA</span>
+        <h3>DJ Barbearia</h3>
+        <p data-about-history>A DJ Barbearia atende em Itabaiana com serviços de corte masculino, barba, sobrancelha e acabamento. Esta área já está preparada para receber a história completa da barbearia assim que tivermos os detalhes.</p>
+      </article>
 
-      <p>Sou Dalvan, barbeiro à frente da DJ Barbearia, em Itabaiana. Você escolhe o serviço, combina o horário pelo WhatsApp e a gente acerta os detalhes do atendimento.</p>
+      <aside class="about-professional-card">
+        <span class="about-kicker">PROFISSIONAL</span>
+        <h3>Dalvan</h3>
+        <p data-about-professional>Responsável pelos atendimentos da DJ Barbearia. Aqui vamos incluir a trajetória profissional, cursos, especializações e outros detalhes que ele quiser apresentar.</p>
 
-      <p>Trabalho com corte masculino, barba, sobrancelha e acabamento. Aos domingos, também faço atendimento em domicílio em Malhador e Alecrim.</p>
-
-      <div class="about-info">
-        <div>
-          <span>01</span>
-          <strong>Na barbearia</strong>
-          <small>Atendimento em Itabaiana</small>
+        <div class="about-professional-meta">
+          <div>
+            <small>ATENDIMENTO</small>
+            <strong>Itabaiana · SE</strong>
+          </div>
+          <div>
+            <small>DOMICÍLIO</small>
+            <strong>Domingos · Malhador e Alecrim</strong>
+          </div>
         </div>
+      </aside>
+    </div>
+
+    <div class="about-credentials" id="formacoes" hidden>
+      <div class="about-credentials-head">
         <div>
-          <span>02</span>
-          <strong>Em domicílio</strong>
-          <small>Domingos · Malhador e Alecrim</small>
+          <span class="about-kicker">FORMAÇÃO & CERTIFICADOS</span>
+          <h3>Aprendizado que aparece no trabalho.</h3>
         </div>
+        <p>Esta área está pronta para receber os cursos, certificados e formações profissionais.</p>
+      </div>
+
+      <div class="certificate-grid" data-certificate-grid>
+        <!--
+          Quando os certificados chegarem, cada card poderá seguir este modelo:
+          <button class="certificate-card" type="button"
+            data-certificate-full="assets/certificado-01.webp"
+            data-certificate-caption="Nome do curso · Instituição · Ano">
+            <img src="assets/certificado-01.webp" alt="Certificado do curso ...">
+            <span><strong>Nome do curso</strong><small>Instituição · Ano</small></span>
+          </button>
+        -->
       </div>
     </div>
   </div>
